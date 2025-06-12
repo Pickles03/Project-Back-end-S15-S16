@@ -29,7 +29,7 @@ router.post('/login', (req, res) => {
     const {username, password} = req.body;
 
     if(
-        username === 'admin' && 
+        username === process.env.ADMIN_USERNAME && 
         password === process.env.ADMIN_PASSWORD
     ) {
         req.session.loggedIn = true;

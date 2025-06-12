@@ -8,7 +8,7 @@ function getProductForm(action, method = 'POST', product = {}) {
         <input type='text' name='name' value='${product.name || ''}' required/>
 
         <label>Description:</label>
-        <textarea name='description' required>${product.description || ''}></textarea>
+        <textarea name='description' required>${product.description || ''}</textarea>
 
         <label>Image URL:</label>
         <input type='file' name='images' accept='image/*' multiple required/>
