@@ -7,9 +7,14 @@ const getProductCard = require('../helpers/getProductCard');
 
 const showProducts = async (req, res) => {
     try {
-        const products = await Product.find();
+        const {category} = req.query;
+
+        const filter = category ? {category} : {};
+
+        const products = await Product.find(filter);
         const isDashboard = req.path.startsWith('/dashboard');
         const content = getNavBar(req.path) + getProductCard(products, isDashboard);
+        
         res.send(baseHtml(isDashboard ? 'Dashboard' : 'Store') + content);
     } catch (err) {
         console.log('Error retrieving products:', err);
