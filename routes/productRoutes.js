@@ -11,18 +11,22 @@ const {
     deleteProduct
 } = require('../controllers/productController');
 const requireAuth = require('../middlewares/authMiddleware');
+const baseHtml = require('../helpers/baseHtml');
 
 router.get('/login', (req, res) => {
-    const error = req.query.error ?  '<p style="color: red;">Invalid login</p>' : '';
-    res.send(`
-        <h2>Login</h2>
-        ${error}
-        <form action="/login" method="POST">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Login</button>
-        </form>
-    `);
+    const error = req.query.error 
+    ?  '<p style="color: red;">Invalid login</p>' 
+    : '';
+    const content = `
+    <h2>Login</h2>
+    ${error}
+    <form action="/login" method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>`;
+
+    res.send(baseHtml('Login', content));
 });
 
 router.post('/login', (req, res) => {

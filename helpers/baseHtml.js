@@ -1,4 +1,4 @@
-function baseHtml(title = 'Clothing Store') {
+function baseHtml(title = 'Clothing Store', bodyContent = '') {
     return `
     <!DOCTYPE html>
     <html lang="en">
@@ -14,8 +14,10 @@ function baseHtml(title = 'Clothing Store') {
             <h1>${title}</h1>
         </header>
         <main>
-
+            ${bodyContent}
         </main>
+    </body>
+    </html>
     `;
 };
 

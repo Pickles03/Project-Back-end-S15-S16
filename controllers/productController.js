@@ -31,11 +31,11 @@ const showProductById = async (req, res) => {
 
         let html = `
         <div class="product-details">
-            <img src="${product.image}" alt="${product.name}" />
+            <img src="${product.image}" alt="${product.name}" width=200px/>
             <h2>${product.name}</h2>
             <p>${product.description}</p>
             <p>Category: ${product.category}</p>
-            <p><b>Size:</b>${product.size}</p>
+            <p><b>Size: </b>${product.size}</p>
             <p>${product.price.toFixed(2)}</p>
         `;
 
