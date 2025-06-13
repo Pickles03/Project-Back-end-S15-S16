@@ -45,6 +45,7 @@ router.get('/logout', (req, res) => {
     });
 });
 
+router.get('/', showProducts);
 router.get('/products', showProducts);
 router.get('/products/:productId', showProductById);
 

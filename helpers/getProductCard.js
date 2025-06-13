@@ -8,17 +8,7 @@ function getProductCard(products, isDashboard) {
         html += `<h2>${product.name}</h2>`;
         html += `<p>${product.description}</p>`;
         html += `<p>Price: $${product.price.toFixed(2)}</p>`;
-        html += `<a href="/products/${product._id}">View Details</a>`;
-
-        if (isDashboard) {
-            html += `<a href="/dashboard/${product._id}/edit">Edit</a>`;
-            html += `
-                <form action="/dashboard/${product._id}/delete?_method=DELETE" method="POST" style="display:inline;">
-                    <button type="submit">Delete</button>
-                </form>
-                `;
-        }
-
+        html += `<a href="${isDashboard ? `/dashboard/${product._id}` : `/products/${product._id}`}">View Details</a>`;
         html += '</div>';
     }
 
