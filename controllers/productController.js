@@ -35,15 +35,15 @@ const showProductById = async (req, res) => {
             <h2>${product.name}</h2>
             <p>${product.description}</p>
             <p>Category: ${product.category}</p>
-            <p><b>Size: </b>${product.size}</p>
+            <p>Size: ${product.size}</p>
             <p>${product.price.toFixed(2)}</p>
         `;
 
         if(isDashboard) {
             html += `
-            <a href="/dashboard/${product._id}/edit">Edit</a>
+            <a href="/dashboard/${product._id}/edit"><b>Edit</b></a>
             <form action="/dashboard/${product._id}/delete?_method=DELETE" method="POST">
-                <button type="submit">Delete</button>
+                <button class="delete-btn" type="submit">Delete</button>
             </form>
             `
         }

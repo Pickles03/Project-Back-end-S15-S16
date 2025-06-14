@@ -18,9 +18,8 @@ router.get('/login', (req, res) => {
     ?  '<p style="color: red;">Invalid login</p>' 
     : '';
     const content = `
-    <h2>Login</h2>
     ${error}
-    <form action="/login" method="POST">
+    <form class="login-form" action="/login" method="POST">
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
         <button type="submit">Login</button>
