@@ -37,7 +37,7 @@ This project is a backend server for a clothing store, built with Node.js, Expre
 
 Upon opening the website, the client will be met with the main home page of the shop display, being able to view all of the products at once, as well as being able to filter them by categories at will. 
 
-They will also have the option to access `Admin Dashboard` which will initially be protected by a `login` request, username and password to which are listed below.
+They will also have the option to access `Admin Dashboard` which will initially be protected by a `login` request, username and password to which are listed in the `.env` file.
 
 ### Once logged in:
 - View all products in the dashboard (`/dashboard`)
